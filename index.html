@@ -1,13 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <title>ehe-Handa-ehe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje "Handayız" - Ana Sayfa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Slate 900 */
+            color: #CBD5E1; /* Slate 300 */
+        }
+       .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+       .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+       .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+       .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #334155; /* Slate 700 */
+            border: 4px solid #4f46e5; /* Indigo 600 */
+        }
+       .timeline-item.completed::before {
+            background-color: #10B981; /* Emerald 500 */
+            border-color: #34D399; /* Emerald 400 */
+        }
+       .timeline-item.in-progress::before {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(167, 139, 250, 0.7);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(167, 139, 250, 0);
+            }
+        }
+    </style>
 </head>
-<body>
-    <div>
-        <h1>Welcome to ehe-Handa-ehe</h1>
-        <p>Your one-stop solution for all your gaming needs.</p>
-    </div>
+<body class="antialiased">
+
+    <nav class="glass-nav sticky top-0 z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white">Proje <span class="gradient-text">Handayız</span></h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+                <a href="#vizyon" class="hover:text-violet-400 transition-colors">Vizyon</a>
+                <a href="#yol-haritasi" class="hover:text-violet-400 transition-colors">Yol Haritası</a>
+                <a href="#dokumanlar" class="hover:text-violet-400 transition-colors">Dokümanlar</a>
+                <a href="#ekip" class="hover:text-violet-400 transition-colors">Ekip</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 md:py-32 text-center relative overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 bg-grid-slate-700/10 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-5xl md:text-7xl section-title text-white leading-tight">Bir Fikirden Gerçeğe:</h1>
+            <h2 class="text-4xl md:text-6xl section-title gradient-text">Proje Yolculuğumuz</h2>
+            <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">Strateji, sanat ve teknolojiyi birleştiren yeni nesil bir dijital kart oyununun doğuşuna tanıklık edin.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-20 space-y-28">
+
+        <section id="vizyon" class="text-center">
+            <h2 class="text-3xl section-title text-white">Vizyonumuz</h2>
+            <p class="mt-4 text-slate-400 max-w-3xl mx-auto leading-relaxed">Biz sadece bir oyun değil, bir dünya inşa ediyoruz. Oyuncuları saatlerce içine çekecek, stratejik derinliği olan, sanatsal kimliğiyle unutulmaz ve teknik mükemmelliğiyle kusursuz bir deneyim yaratmayı hedefliyoruz. Her kartın, her mekaniğin ve her görsel detayın bir amacı var: türünün en iyisi olmak.</p>
+        </section>
+
+        <section id="yol-haritasi">
+            <h2 class="text-3xl section-title text-white text-center mb-16">Proje Geliştirme Zaman Çizelgesi</h2>
+            <div class="relative max-w-3xl mx-auto pl-8 border-l-2 border-slate-700">
+                
+                <div class="timeline-item in-progress mb-16 relative">
+                    <div class="glass-effect rounded-xl p-6">
+                        <p class="text-sm font-semibold text-violet-400">FAZ 1 (Devam Ediyor)</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">Çekirdek Prototip</h3>
+                        <p class="text-xs text-slate-400 mt-1">Tahmini Süre: 8 Hafta</p>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                            <p><strong>SMART Hedef:</strong> Oyunun temel mekaniklerinin (kart çek/oyna/at, set kurma, puanlama) çalıştığı, tek bilgisayarda iki kişiyle oynanabilen, sağlam bir teknik mimariye sahip, çalıştırılabilir bir prototip oluşturmak.</p>
+                            <div>
+                                <h4 class="font-semibold text-white">Olmazsa Olmazlar:</h4>
+                                <ul class="list-disc list-inside text-sm text-slate-400 mt-1">
+                                    <li>Oynanabilir `.exe` çıktısı</li>
+                                    <li>Ölçeklenebilir temel kod mimarisi</li>
+                                    <li>Tüm kart verilerini içeren `ScriptableObject` yapısı</li>
+                                    <li>Nihai tema için konsept kararı</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-16 relative">
+                    <div class="glass-effect rounded-xl p-6">
+                        <p class="text-sm font-semibold text-slate-500">FAZ 2 (Sıradaki)</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">Gelişmiş Prototip (Alpha)</h3>
+                        <p class="text-xs text-slate-400 mt-1">Tahmini Süre: 12 Hafta</p>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                            <p><strong>SMART Hedef:</strong> Çekirdek prototip üzerine karmaşık kart yeteneklerini, temel 3D görselleri, sesleri ve seçilen temaya uygun gelişmiş arayüzü ekleyerek oyunun "eğlenceli" hissettiren ilk versiyonunu tamamlamak.</p>
+                            <div>
+                                <h4 class="font-semibold text-white">Olmazsa Olmazlar:</h4>
+                                <ul class="list-disc list-inside text-sm text-slate-400 mt-1">
+                                    <li>Tüm kart türlerinin temel yeteneklerinin çalışması</li>
+                                    <li>İlk 3D karakter modelleri ve animasyonları</li>
+                                    <li>Temel ses efektleri ve arayüz entegrasyonu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item mb-16 relative">
+                    <div class="glass-effect rounded-xl p-6">
+                        <p class="text-sm font-semibold text-slate-500">FAZ 3</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">Dikey Kesit (Vertical Slice)</h3>
+                        <p class="text-xs text-slate-400 mt-1">Tahmini Süre: 6 Hafta</p>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                            <p><strong>SMART Hedef:</strong> Oyunun nihai kalitesini yansıtan, cilalanmış, kısa (10-15 dk) ama baştan sona tam bir oyun deneyimi sunan bir demo sürümü hazırlamak. Bu sürüm, yatırımcı ve yayıncı sunumları için kullanılacaktır.</p>
+                            <div>
+                                <h4 class="font-semibold text-white">Olmazsa Olmazlar:</h4>
+                                <ul class="list-disc list-inside text-sm text-slate-400 mt-1">
+                                    <li>Cilalanmış görseller ve VFX</li>
+                                    <li>Profesyonel ses ve müzik entegrasyonu</li>
+                                    <li>Hatasız ve akıcı oyun deneyimi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item relative">
+                     <div class="glass-effect rounded-xl p-6">
+                        <p class="text-sm font-semibold text-slate-500">FAZ 4 & 5</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">Üretim, Beta ve Lansman</h3>
+                        <p class="text-xs text-slate-400 mt-1">Tahmini Süre: Belirlenecek</p>
+                        <div class="mt-4 text-slate-300 space-y-3">
+                            <p><strong>SMART Hedef:</strong> Oyundaki tüm içeriği tamamlamak, kapalı/açık beta testleriyle dengelemeleri yapmak ve oyunu hedef platformlarda başarıyla yayınlamak.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="dokumanlar">
+            <h2 class="text-3xl section-title text-white text-center mb-12">Proje Kütüphanesi</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <a href="/tdd.html" class="block glass-effect rounded-xl p-8 hover:border-violet-500 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Teknik Mimarinin Kalbi: TDD</h3>
+                    </div>
+                    <p class="text-sm text-slate-400">Oyunumuzun ölçeklenebilir ve sağlam teknik temelini oluşturan, tüm sistemlerin ve mimari kararların detaylandırıldığı teknik tasarım dokümanı.</p>
+                </a>
+                <a href="/ssk.html" class="block glass-effect rounded-xl p-8 hover:border-violet-500 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Görsel Kimliğin Ruhu: Sanat Kılavuzu</h3>
+                    </div>
+                    <p class="text-sm text-slate-400">Oyunumuzun görsel dünyasını tanımlayan, potansiyel temaları, renk paletlerini, tipografi ve UI/UX prensiplerini karşılaştırmalı olarak sunan sanat stili kılavuzu.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="ekip">
+            <h2 class="text-3xl section-title text-white text-center mb-12">Projeyi İnşa Eden Ekip</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <img src="https://placehold.co/150x150/334155/e0e0e0?text=YC" alt="Yiğit Can" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-slate-700">
+                    <h4 class="text-lg font-bold text-white">Yiğit Can Eroğlu</h4>
+                    <p class="text-sm gradient-text font-semibold">Proje Yöneticisi / Kurucu</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/150x150/334155/e0e0e0?text=CB" alt="Cem Berk" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-slate-700">
+                    <h4 class="text-lg font-bold text-white">Cem Berk</h4>
+                    <p class="text-sm gradient-text font-semibold">Baş Geliştirici</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/150x150/334155/e0e0e0?text=CC" alt="Çağla Canan" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-slate-700">
+                    <h4 class="text-lg font-bold text-white">Çağla Canan</h4>
+                    <p class="text-sm gradient-text font-semibold">Sanat Yönetmeni / Baş Tasarımcı</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-24 py-8">
+        <div class="container mx-auto text-center text-sm text-slate-500">
+            <p>&copy; 2025 - Proje "Handayız" Dahili Portal v1.0</p>
+        </div>
+    </footer>
+
 </body>
 </html>
