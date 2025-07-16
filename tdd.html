@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handayız Projesi - Teknik Tasarım Dokümanı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a092d;
+            color: #e0e0e0;
+        }
+        .glass-effect {
+            background: rgba(16, 14, 58, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .section-icon {
+            background: linear-gradient(145deg, #4f46e5, #a855f7);
+        }
+        .code-block {
+            background-color: #1e1b4b;
+            border-left: 4px solid #818cf8;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #312e81;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #312e81;
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #1e1b4b;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="glass-effect sticky top-0 z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white">Handayız <span class="gradient-text">TDD</span></h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#mimari" class="hover:text-indigo-400 transition-colors">Mimari</a>
+                <a href="#veri" class="hover:text-indigo-400 transition-colors">Veri</a>
+                <a href="#sistemler" class="hover:text-indigo-400 transition-colors">Sistemler</a>
+                <a href="#akis" class="hover:text-indigo-400 transition-colors">Akış</a>
+                <a href="#girdi" class="hover:text-indigo-400 transition-colors">Girdi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 md:py-32 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-indigo-500/10 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white leading-tight">Teknik Tasarım Dokümanı</h1>
+            <p class="mt-4 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">Faz 1: Ölçeklenebilir, modern ve geleceğe hazır bir çekirdek prototipin mimari planı.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 space-y-24">
+
+        <!-- 1. Çekirdek Mimari -->
+        <section id="mimari">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">1. Çekirdek Mimari Çerçevesi</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-indigo-100 leading-relaxed">
+                    <h3 class="gradient-text text-2xl">Olay Tabanlı, Veri Odaklı Paradigma</h3>
+                    <p>Projede, sistemler arası bağımlılığı ortadan kaldırmak için Olay Tabanlı Mimari (EDA) benimsenecektir. Bu yaklaşım, bir kart oynandığında UI, oyun mantığı ve diğer sistemlerin birbirine dolaylı olarak, bir "Olay Yolu" (Event Bus) üzerinden haber vermesini sağlar. Bu yapı, projenin modüler, test edilebilir ve gelecekteki çok oyunculu (multiplayer) yapıya kolayca ölçeklenebilir olmasını garanti eder.</p>
+                    <p>Unity içinde bu mimari, sahneden bağımsız ve tasarımcı dostu olan `ScriptableObject` tabanlı bir olay sistemi ile uygulanacaktır. Bu, geliştirme sürecini hızlandırır ve bellek sızıntısı gibi riskleri minimize eder.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6">
+                    <h4 class="font-semibold text-white mb-4 text-center">Üst Düzey Sistem Etkileşim Diyagramı</h4>
+                    <img src="https://placehold.co/600x400/0a092d/e0e0e0?text=Sistem+Etkileşim+Şeması" alt="Sistem Etkileşim Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                    <p class="text-xs text-center mt-2 text-indigo-300">Ana sistemler (GameManager, UIManager vb.) birbirleriyle doğrudan konuşmaz; tüm iletişim merkezi bir Olay Yolu üzerinden gerçekleşir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Veri Mimarisi -->
+        <section id="veri">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7l8 4.5 8-4.5M12 11.5V21" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">2. Veri Mimarisi ve Varlık Yönetimi</h2>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-4">CardData ScriptableObject: Tek Gerçeklik Kaynağı</h3>
+                    <p class="text-indigo-100 leading-relaxed max-w-4xl">Oyundaki ~145 kartın tamamı, `CardData` adında bir `ScriptableObject` asset'i olarak temsil edilecektir. Bu yapı, tasarımcıların kod yazmadan kart verilerini (puan, tür, yetenek metni vb.) doğrudan Unity editöründen yönetmesine olanak tanır. Bu, oyun dengeleme ve içerik ekleme süreçlerini inanılmaz derecede esnek ve hızlı hale getirir.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <h4 class="font-semibold text-white mb-4">Tablo: CardData.cs Alan Tanımları</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alan Adı</th>
+                                <th>C# Tipi</th>
+                                <th>Amaç ve Açıklama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>cardID</td><td>string</td><td>Veritabanı ve ağ iletişimi için benzersiz anahtar.</td></tr>
+                            <tr><td>cardName</td><td>string</td><td>Oyuncuya gösterilecek kart adı.</td></tr>
+                            <tr><td>cardType</td><td>CardType (enum)</td><td>Kartın ana kategorisi (Günahkar, Şeytan, Ayin vb.).</td></tr>
+                            <tr><td>sinType</td><td>SinType (enum)</td><td>Günahkar kartları için günah türü.</td></tr>
+                            <tr><td>soulValue</td><td>int</td><td>Kartın temel puan değeri.</td></tr>
+                            <tr><td>cardArt</td><td>Sprite</td><td>Kartın 2D görseli.</td></tr>
+                            <tr><td>abilityDescription</td><td>string</td><td>Yetenek açıklama metni.</td></tr>
+                            <tr><td>cardAbilities</td><td>List&lt;AbilityEffect&gt;</td><td>Ölçeklenebilir yetenek sisteminin programatik temeli.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Çekirdek Sistemler -->
+        <section id="sistemler">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">3. Çekirdek Sistemler ve Yöneticiler</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="glass-effect rounded-xl p-6">
+                    <h4 class="font-semibold text-white mb-4 text-center">GameManager Durum Geçiş Diyagramı</h4>
+                    <img src="https://placehold.co/600x450/0a092d/e0e0e0?text=Durum+Makinesi+(State+Machine)" alt="Durum Makinesi Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                    <p class="text-xs text-center mt-2 text-indigo-300">Oyunun genel akışı (Ana Menü, Oyun Kurulumu, Oyuncu Turu, Puanlama, Oyun Sonu) bir Durum Makinesi ile yönetilecektir.</p>
+                </div>
+                <div class="space-y-4 text-indigo-100 leading-relaxed">
+                    <h3 class="gradient-text text-2xl">GameManager: Ana Durum Kontrolcüsü</h3>
+                    <p>`GameManager`, oyunun en üst düzeydeki akışını yöneten orkestra şefidir. Oyunun bir durumdan diğerine geçişini sağlamak için **Durum (State) tasarım desenini** kullanır. Bu, her bir oyun durumunun (örn: `GameSetupState`, `PlayerTurnState`) mantığını kendi sınıfı içinde kapsülleyerek sistemi temiz, anlaşılır ve kolayca genişletilebilir hale getirir.</p>
+                    <h3 class="gradient-text text-2xl mt-6">UIManager: Reaktif ve Bağımsız Arayüz</h3>
+                    <p>`UIManager` tamamen reaktif bir yapıda olacaktır. Oyun mantığını doğrudan çağırmak yerine, sadece `ScoreUpdated` veya `TurnStarted` gibi oyun olaylarına abone olur ve bu olaylar gerçekleştiğinde arayüzü günceller. Bu yaklaşım, UI'ı oyun mantığından tamamen ayırarak paralel geliştirmeye olanak tanır ve test edilebilirliği artırır.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Oyun Akışı -->
+        <section id="akis">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">4. Oyun Akışı ve Mantık Uygulaması</h2>
+            </div>
+            <div class="space-y-8">
+                <div class="glass-effect rounded-xl p-6">
+                    <h4 class="font-semibold text-white mb-4 text-center">Bir Oyuncu Turunun Sıra Diyagramı</h4>
+                    <img src="https://placehold.co/1200x500/0a092d/e0e0e0?text=Set+Oynama+Akış+Diyagramı" alt="Sıra Diyagramı" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/1200x500/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                    <p class="text-xs text-center mt-2 text-indigo-300">Bir oyuncunun "Set Oynama" eylemi, `InputReader` tarafından algılanır, Olay Yolu üzerinden `GameplayLogic`'e iletilir, doğrulanır ve sonuç yine olaylar aracılığıyla `UIManager`'a bildirilerek oyuncuya gösterilir.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="code-block rounded-lg p-4 overflow-x-auto">
+                        <h4 class="font-semibold text-white mb-2">Set Doğrulama Algoritması</h4>
+                        <pre><code class="language-csharp text-sm text-indigo-200">
+// GameplayLogic.cs
+public bool IsValidSet(List<CardData> cards)
+{
+    if (cards.Count < 3) return false;
+
+    SinType firstSinnerType = SinType.None;
+    // ...
+    // Set içindeki ilk gerçek günahkar türünü bul.
+    // ...
+    // Tüm kartların bu türe uyduğunu veya
+    // Yalancı (Deceiver) olduğunu kontrol et.
+    // ...
+    return true;
+}
+                        </code></pre>
+                    </div>
+                    <div class="code-block rounded-lg p-4 overflow-x-auto">
+                        <h4 class="font-semibold text-white mb-2">Puanlama Algoritması</h4>
+                        <pre><code class="language-csharp text-sm text-indigo-200">
+// ScoreManager.cs
+public int CalculateRoundScore(PlayerState player)
+{
+    // Kural 1: Katil veya Lucifer kontrolü.
+    if (!player.CanScore()) return 0;
+
+    int totalScore = 0;
+    // Kural 2: Masadaki kartları topla.
+    // ...
+    // Kural 3: Eldeki kartları çıkar.
+    // ...
+    return totalScore;
+}
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Oyuncu Girdisi -->
+        <section id="girdi">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">5. Oyuncu Girdisi ve Etkileşim</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-4 text-indigo-100 leading-relaxed">
+                    <h3 class="gradient-text text-2xl">Input System ve Soyutlama Katmanı</h3>
+                    <p>Projede, Unity'nin modern **Input System** paketi kullanılacaktır. Bu sistem, girdileri donanımdan (fare, klavye, gamepad) soyutlayarak esnek bir kontrol şeması oluşturur. Oyun mantığı, doğrudan donanımı dinlemek yerine, `InputReader.cs` adında bir soyutlama katmanının yayınladığı anlamsal olayları (`OnClickEvent`, `OnDragEvent` vb.) dinler.</p>
+                    <p>Bu yaklaşım, oyun mantığını belirli bir donanıma sıkıca bağlamaktan kurtarır. Gelecekte projeye oyun kumandası veya dokunmatik ekran desteği eklemek, oyunun çekirdek kodunda hiçbir değişiklik yapmadan, sadece `InputReader` katmanında yapılacak küçük bir konfigürasyonla mümkün olacaktır.</p>
+                </div>
+                <div class="code-block rounded-lg p-4 overflow-x-auto">
+                    <h4 class="font-semibold text-white mb-2">InputReader.cs Örnek Yapı</h4>
+                    <pre><code class="language-csharp text-sm text-indigo-200">
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class InputReader : MonoBehaviour, Controls.IPlayerActions
+{
+    // Inspector'dan atanacak ScriptableObject olayları
+    public GameEvent onClickEvent;
+
+    private Controls controls;
+
+    private void OnEnable()
+    {
+        if (controls == null)
+        {
+            controls = new Controls();
+            controls.Player.SetCallbacks(this);
+        }
+        controls.Player.Enable();
+    }
+
+    // Input System tarafından çağrılır
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            // Tıklama olayını tüm dinleyicilere yayınla
+            onClickEvent.Raise();
+        }
+    }
+}
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-indigo-900/50 mt-24 py-8">
+        <div class="container mx-auto text-center text-sm text-indigo-400">
+            <p>&copy; 2025 [Şirket Adı Belirlenecek] - Handayız Projesi Teknik Tasarım Dokümanı v1.0</p>
+        </div>
+    </footer>
+
+</body>
+</html>
