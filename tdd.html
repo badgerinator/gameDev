@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handayız Projesi - Teknik Tasarım Dokümanı</title>
+    <title>"Handayız" Projesi - Teknik Tasarım Dokümanı</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +25,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        h2, h3 {
+        h1, h2, h3, h4 {
             font-weight: 700;
             letter-spacing: -0.02em;
+            color: #ffffff;
         }
         .section-icon {
             background: linear-gradient(145deg, #4f46e5, #a855f7);
@@ -35,10 +36,13 @@
         .code-block {
             background-color: #1e1b4b;
             border-left: 4px solid #818cf8;
+            color: #c7d2fe;
         }
         table {
             border-collapse: collapse;
             width: 100%;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         th, td {
             border: 1px solid #312e81;
@@ -52,6 +56,37 @@
         tbody tr:nth-child(even) {
             background-color: #1e1b4b;
         }
+        .prose {
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        .prose h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .prose h4 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose strong {
+            color: #a5b4fc;
+        }
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        .prose a {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+        .caption {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #9ca3af;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -59,8 +94,9 @@
     <!-- Navigation Bar -->
     <nav class="glass-effect sticky top-0 z-50 px-4 py-3">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-white">Handayız <span class="gradient-text">TDD</span></h1>
+            <h1 class="text-xl font-bold">Handayız <span class="gradient-text">TDD</span></h1>
             <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#giris" class="hover:text-indigo-400 transition-colors">Giriş</a>
                 <a href="#mimari" class="hover:text-indigo-400 transition-colors">Mimari</a>
                 <a href="#veri" class="hover:text-indigo-400 transition-colors">Veri</a>
                 <a href="#sistemler" class="hover:text-indigo-400 transition-colors">Sistemler</a>
@@ -74,204 +110,405 @@
     <header class="py-20 md:py-32 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-indigo-500/10 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
         <div class="container mx-auto px-4 relative">
+            <p class="font-bold gradient-text mb-2">Versiyon: 1.0 | Tarih: 17.07.2025</p>
             <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white leading-tight">Teknik Tasarım Dokümanı</h1>
-            <p class="mt-4 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">Faz 1: Ölçeklenebilir, modern ve geleceğe hazır bir çekirdek prototipin mimari planı.</p>
+            <p class="mt-4 text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto">"Handayız" Projesi - Faz 1 Çekirdek Prototip</p>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-16 space-y-24">
 
+        <!-- Giriş -->
+        <section id="giris" class="prose max-w-none">
+            <h3>Giriş: Ölçeklenebilir Bir Geleceğin Tasarımı</h3>
+            <p>Bu doküman, "Handayız" adlı dijital kart oyununun <strong>Faz 1: Çekirdek Prototip</strong> aşaması için eksiksiz teknik şartnameyi sunmaktadır. Bu fazın temel hedefi, projenin gelecekteki tüm gelişim aşamalarını (çok oyunculu mod, 3D görseller, karmaşık kart yetenekleri vb.) destekleyecek; sağlam, ölçeklenebilir ve bakımı kolay bir yazılım mimarisi kurmaktır. Faz 1'in kapsamı, tek bir bilgisayar üzerinde iki oyuncuyla ("hot-seat") oynanabilen temel bir prototip oluşturmakla sınırlı olsa da, bu dokümanda detaylandırılan mimari, projenin nihai vizyonu göz önünde bulundurularak tasarlanmıştır. Bu yaklaşım, gelecekte ortaya çıkabilecek teknik borcu en aza indirir ve prototipin "kullan-at" bir çalışma olmasını engelleyerek, nihai ürünün ilk ve en sağlam katmanı olmasını sağlar. Bu hedefe ulaşmak için modern, olay tabanlı (event-driven) ve veri odaklı (data-oriented) bir paradigma benimsenecektir.</p>
+        </section>
+
         <!-- 1. Çekirdek Mimari -->
-        <section id="mimari">
+        <section id="mimari" class="prose max-w-none">
             <div class="flex items-center gap-4 mb-8">
                 <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                 </div>
                 <h2 class="text-3xl font-bold text-white">1. Çekirdek Mimari Çerçevesi</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="space-y-4 text-indigo-100 leading-relaxed">
-                    <h3 class="gradient-text text-2xl">Olay Tabanlı, Veri Odaklı Paradigma</h3>
-                    <p>Projede, sistemler arası bağımlılığı ortadan kaldırmak için Olay Tabanlı Mimari (EDA) benimsenecektir. Bu yaklaşım, bir kart oynandığında UI, oyun mantığı ve diğer sistemlerin birbirine dolaylı olarak, bir "Olay Yolu" (Event Bus) üzerinden haber vermesini sağlar. Bu yapı, projenin modüler, test edilebilir ve gelecekteki çok oyunculu (multiplayer) yapıya kolayca ölçeklenebilir olmasını garanti eder.</p>
-                    <p>Unity içinde bu mimari, sahneden bağımsız ve tasarımcı dostu olan `ScriptableObject` tabanlı bir olay sistemi ile uygulanacaktır. Bu, geliştirme sürecini hızlandırır ve bellek sızıntısı gibi riskleri minimize eder.</p>
-                </div>
-                <div class="glass-effect rounded-xl p-6">
-                    <h4 class="font-semibold text-white mb-4 text-center">Üst Düzey Sistem Etkileşim Diyagramı</h4>
-                    <img src="https://placehold.co/600x400/0a092d/e0e0e0?text=Sistem+Etkileşim+Şeması" alt="Sistem Etkileşim Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
-                    <p class="text-xs text-center mt-2 text-indigo-300">Ana sistemler (GameManager, UIManager vb.) birbirleriyle doğrudan konuşmaz; tüm iletişim merkezi bir Olay Yolu üzerinden gerçekleşir.</p>
-                </div>
+            <h4>1.1. Olay Tabanlı, Veri Odaklı Paradigma: "Neden?" Sorusunun Cevabı</h4>
+            <p>Projede, temel sistemler arasındaki bağımlılığı ortadan kaldırmak için bir <strong>Olay Tabanlı Mimari (Event-Driven Architecture - EDA)</strong> benimsenecektir. Kart oyunları doğası gereği, tek bir eylemin birden çok sistemi etkilediği karmaşık etkileşimlere sahiptir. Örneğin, bir kartın oynanması; oyuncunun elini, oyun masasındaki durumu, kullanıcı arayüzünü (UI) ve potansiyel olarak diğer kartların yeteneklerini aynı anda tetikleyebilir. Bu sistemleri birbirine doğrudan referanslarla bağlamak ("spaghetti code" olarak bilinen karmaşık ve kırılgan bir yapıya yol açar), kodun bakımını ve genişletilmesini son derece zorlaştırır. EDA, sistemlerin bir "Olay Yolu (Event Bus)" üzerinden dolaylı olarak iletişim kurmasını sağlayarak modülerliği, test edilebilirliği ve ölçeklenebilirliği teşvik eder.</p>
+            <p>Bu mimariyi Unity içerisinde en etkin şekilde uygulamak için, <strong>ScriptableObject tabanlı bir olay sistemi</strong> kullanılacaktır. Geleneksel C# olayları (events), özellikle sahne geçişlerinde veya nesneler yok edildiğinde dinleyicilerin (listeners) düzgün bir şekilde kaydının silinmemesi durumunda bellek sızıntılarına ve hatalara yol açabilir. ScriptableObject tabanlı olaylar ise bu sorunu ortadan kaldırır. Bu olaylar, proje içerisinde birer "asset" olarak var olurlar ve sahneden bağımsızdırlar. Bu yaklaşım, aynı zamanda tasarımcıların Unity editörü içerisinden olayları görmesine, referans vermesine ve hatta test amaçlı tetiklemesine olanak tanıyarak tüm ekibin oyunun veri akışını daha kolay anlamasını ve hata ayıklamasını sağlar. Bu, özellikle geliştiricinin mevcut öğrenme süreci ve proje planı göz önüne alındığında büyük bir avantajdır.</p>
+            
+            <h4>1.2. Üst Düzey Sistem Etkileşim Diyagramı</h4>
+            <p>Aşağıdaki bileşen diyagramı, projenin ana sistemleri arasındaki iletişim akışını görselleştirmektedir. Diyagramda görüleceği üzere, GameManager, TurnManager, UIManager ve InputReader gibi ana sistemler birbirleriyle doğrudan bir bağlantı kurmazlar. Tüm iletişim, merkezi bir <strong>Oyun Olay Yolu (Game Event Bus)</strong> üzerinden dolaylı olarak gerçekleşir. Bu, sistemlerin birbirinden habersiz (decoupled) bir şekilde çalışmasını garanti altına alan temel mimari prensibimizdir.</p>
+            <div class="glass-effect rounded-xl p-6 my-8">
+                <img src="https://placehold.co/800x500/0a092d/e0e0e0?text=Sistem+Etkileşim+Şeması" alt="Sistem Etkileşim Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/800x500/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                <p class="caption"><strong>Diyagram 1:</strong> Sistemlerin Olay Yolu (Event Bus) üzerinden dolaylı iletişimini gösteren üst düzey mimari şeması.</p>
+            </div>
+
+            <h4>1.3. Sadece Faz 1 İçin Değil, Faz 3 İçin Mimari Tasarlamak</h4>
+            <p>Bu projedeki en önemli risklerden biri, Faz 1 için hızlı ve basit bir prototip oluşturup, ilerleyen fazlarda çok oyunculu (multiplayer) ve 3D gibi karmaşık özellikler ekleneceği zaman bu prototipin tamamen çöpe atılması gerekliliğidir. Bu teknik tasarım dokümanı, bu riski bilinçli olarak ortadan kaldırmak üzere hazırlanmıştır.</p>
+            <p>Bu stratejinin arkasındaki mantık akışı şu şekildedir:</p>
+            <ol class="list-decimal pl-6 space-y-2">
+                <li>Faz 1 iş planı, tek bilgisayarda oynanan basit bir prototipi hedeflemektedir. Bu durumda bir geliştirici, sistemleri birbirine doğrudan bağlama eğiliminde olabilir. Örneğin, puan güncellendiğinde <code>GameManager.Instance.UIManager.UpdateScore()</code> gibi bir fonksiyonu doğrudan çağırabilir. Bu, başlangıçta hızlı bir çözümdür.</li>
+                <li>Ancak, projenin uzun vadeli vizyonunu içeren Oyun Tasarım Dokümanı (GDD), sunucu-yetkili (server-authoritative) bir çok oyunculu mimariyi şart koşmaktadır. Bu mimaride, bir oyuncunun (client) arayüzü doğrudan güncellemesi mümkün değildir. Oyuncu, bir eylem talebini sunucuya gönderir; sunucu bu eylemi doğrular ve sonucunu tüm oyunculara yayınlar.</li>
+                <li>İlk adımda bahsedilen basit ve sıkı sıkıya bağlı (tightly-coupled) yaklaşım, ikinci adımda gereken mimariyle temelden çelişir. Bu durum, Faz 1'de harcanan 8 haftalık geliştirme süresinin boşa gitmesine ve kodun tamamen yeniden yazılmasına neden olur.</li>
+                <li>Buna karşılık, bu dokümanda önerilen olay tabanlı mimari, bu iki faz arasında kusursuz bir köprü görevi görür. Faz 1'de, ScoreManager yerel olarak bir <code>ScoreUpdated</code> olayı yayınlar ve UIManager bu olayı dinleyerek arayüzü günceller. Faz 3'e geçildiğinde ise, istemci tarafındaki ScoreManager mantığı, sunucudan gelen bir <code>ScoreUpdated</code> ağ mesajını dinleyen bir NetworkClient ile değiştirilir. En kritik nokta şudur: UIManager'ın kodunda <strong>hiçbir değişiklik yapılmasına gerek kalmaz</strong>. Arayüz, kimin yayınladığına bakmaksızın sadece <code>ScoreUpdated</code> olayını dinlemeye devam eder.</li>
+            </ol>
+            <p>Sonuç olarak, başlangıçta biraz daha karmaşık görünen bu olay tabanlı mimariyi benimsemek, Faz 1'de yapılan işin tek kullanımlık değil, projenin geleceği için sağlam ve kalıcı bir temel olmasını sağlar. Bu TDD'nin en temel stratejik değeri budur.</p>
+            
+            <h4 class="mt-8">Tablo 1: Çekirdek Oyun Olayları (ScriptableObject Tabanlı)</h4>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Olay Adı (SO Asset)</th>
+                            <th>Veri Yükü (Payload)</th>
+                            <th>Açıklama</th>
+                            <th>Birincil Yayıncı(lar)</th>
+                            <th>Birincil Abone(ler)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>GameSetupStarted</td><td>void</td><td>Yeni bir raundun başladığını ve tüm sistemlerin kurulum için hazırlanması gerektiğini bildirir.</td><td>GameManager</td><td>DeckManager, UIManager, PlayerManager</td></tr>
+                        <tr><td>TurnStarted</td><td>PlayerID</td><td>Sırası gelen oyuncunun kimliğini belirterek yeni bir turun başladığını duyurur.</td><td>TurnManager</td><td>UIManager, InputReader, GameplayLogic</td></tr>
+                        <tr><td>CardDrawn</td><td>PlayerID, CardData</td><td>Bir oyuncunun eline yeni bir kart çektiğini bildirir.</td><td>DeckManager</td><td>UIManager, PlayerState</td></tr>
+                        <tr><td>CardPlayed</td><td>PlayerID, CardData</td><td>Bir oyuncunun masaya başarılı bir şekilde kart oynadığını bildirir.</td><td>GameplayLogic</td><td>UIManager, ScoreManager, AbilityManager (Faz 2+)</td></tr>
+                        <tr><td>SetPlayed</td><td>PlayerID, List&lt;CardData&gt;</td><td>Bir oyuncunun masaya bir set (örn: 3'lü Günahkar) oynadığını bildirir.</td><td>GameplayLogic</td><td>UIManager, AbilityManager (Faz 2+)</td></tr>
+                        <tr><td>ScoreUpdated</td><td>PlayerID, int newTotalScore</td><td>Bir oyuncunun toplam puanının değiştiğini ve yeni değerini bildirir.</td><td>ScoreManager</td><td>UIManager</td></tr>
+                        <tr><td>RoundEnded</td><td>void</td><td>Raundun sona erme koşullarından birinin gerçekleştiğini duyurur.</td><td>GameplayLogic</td><td>GameManager, ScoreManager</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <!-- 2. Veri Mimarisi -->
-        <section id="veri">
-            <div class="flex items-center gap-4 mb-8">
+        <!-- Diğer bölümler buraya eklenecek -->
+        <section id="veri" class="prose max-w-none">
+             <div class="flex items-center gap-4 mb-8">
                 <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7l8 4.5 8-4.5M12 11.5V21" /></svg>
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7l8 4.5 8-4.5M12 11.5V21" /></svg>
                 </div>
                 <h2 class="text-3xl font-bold text-white">2. Veri Mimarisi ve Varlık Yönetimi</h2>
             </div>
-            <div class="space-y-8">
-                <div>
-                    <h3 class="gradient-text text-2xl mb-4">CardData ScriptableObject: Tek Gerçeklik Kaynağı</h3>
-                    <p class="text-indigo-100 leading-relaxed max-w-4xl">Oyundaki ~145 kartın tamamı, `CardData` adında bir `ScriptableObject` asset'i olarak temsil edilecektir. Bu yapı, tasarımcıların kod yazmadan kart verilerini (puan, tür, yetenek metni vb.) doğrudan Unity editöründen yönetmesine olanak tanır. Bu, oyun dengeleme ve içerik ekleme süreçlerini inanılmaz derecede esnek ve hızlı hale getirir.</p>
-                </div>
-                <div class="overflow-x-auto">
-                    <h4 class="font-semibold text-white mb-4">Tablo: CardData.cs Alan Tanımları</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Alan Adı</th>
-                                <th>C# Tipi</th>
-                                <th>Amaç ve Açıklama</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>cardID</td><td>string</td><td>Veritabanı ve ağ iletişimi için benzersiz anahtar.</td></tr>
-                            <tr><td>cardName</td><td>string</td><td>Oyuncuya gösterilecek kart adı.</td></tr>
-                            <tr><td>cardType</td><td>CardType (enum)</td><td>Kartın ana kategorisi (Günahkar, Şeytan, Ayin vb.).</td></tr>
-                            <tr><td>sinType</td><td>SinType (enum)</td><td>Günahkar kartları için günah türü.</td></tr>
-                            <tr><td>soulValue</td><td>int</td><td>Kartın temel puan değeri.</td></tr>
-                            <tr><td>cardArt</td><td>Sprite</td><td>Kartın 2D görseli.</td></tr>
-                            <tr><td>abilityDescription</td><td>string</td><td>Yetenek açıklama metni.</td></tr>
-                            <tr><td>cardAbilities</td><td>List&lt;AbilityEffect&gt;</td><td>Ölçeklenebilir yetenek sisteminin programatik temeli.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+            <h4>2.1. CardData ScriptableObject: Tek Gerçeklik Kaynağı</h4>
+            <p>Projedeki tüm kartlar (~145 adet), <strong>CardData</strong> adında bir ScriptableObject asset'i olarak temsil edilecektir. Bu yapı, projenin en kritik veri yapısıdır. ScriptableObject'tan kalıtım alması, oyun tasarımcılarının Unity editörü içinde, kod yazmadan yeni kartlar oluşturmasına, mevcut kartları düzenlemesine ve dengelemesine olanak tanır. Her bir kart, kendi <code>CardData.asset</code> dosyasına sahip olacak ve oyunun "tek gerçeklik kaynağı" (single source of truth) olarak işlev görecektir.</p>
+            <p>Ancak, kartların karmaşık yeteneklerini yönetmek için basit bir metin alanı (string abilityDescription) kullanmak, projenin geleceği için büyük bir tuzaktır. Kural kitapçığında "3 veya daha fazla bu Günahkar'a sahipsen..." veya "Bu Günahkar Kilisene ilk girdiğinde..." gibi koşullu ve tetiklemeli yetenekler bulunmaktadır. Bu metinleri oyun sırasında ayrıştırmak (parse etmek) hem karmaşık hem de hataya açık bir süreçtir. Alternatif olarak, tüm yetenekleri GameplayLogic sınıfı içinde dev bir switch-case bloğu ile kodlamak ise ölçeklenemez bir anti-desendir.</p>
+            <p>Bu sorunu aşmak için, yeteneklerin kendisi de veri olarak ele alınacaktır. CardData sınıfı, bir <code>List&lt;AbilityEffect&gt;</code> içerecektir. <code>AbilityEffect</code>, aşağıdaki gibi alanlara sahip, serileştirilebilir (serializable) bir C# sınıfı olacaktır:</p>
+            <ul class="list-disc pl-6 space-y-1">
+                <li><strong>TriggerType (enum):</strong> Yeteneğin ne zaman tetikleneceğini belirtir (örn: OnPlay, OnDiscard, OnSetCount, OnRoundEnd).</li>
+                <li><strong>Condition (class):</strong> Yeteneğin çalışması için gereken koşulları tanımlar (örn: SetCountCondition sınıfı, targetSinType ve requiredCount gibi alanlar içerebilir).</li>
+                <li><strong>Effect (class):</strong> Koşul sağlandığında hangi etkinin uygulanacağını tanımlar (örn: DrawCardEffect sınıfı, amount alanı içerebilir).</li>
+            </ul>
+            <p>Faz 1 kapsamında, bu AbilityEffect yapısı sadece veri olarak oluşturulacak ve GameplayLogic tarafından işlenmeyecektir. Ancak bu altyapı, Faz 2'de karmaşık yeteneklerin uygulanması için sağlam bir zemin hazırlar. Geliştirici, bu listeyi işleyen bir AbilityManager sistemi yazdığında, yeni yetenekler eklemek sadece yeni veri asset'leri oluşturmak kadar kolay olacaktır. Bu yaklaşım, büyük bir yeniden yapılandırma (refactoring) ihtiyacını ortadan kaldırır ve GDD'de belirtilen JSON benzeri yetenek yapısı vizyonuyla da uyumludur.</p>
+
+            <h4 class="mt-8">Tablo 2: CardData.cs Alan Tanımları</h4>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alan Adı</th>
+                            <th>C# Tipi</th>
+                            <th>Inspector Açıklaması (Tooltip)</th>
+                            <th>Amaç ve Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>cardID</td><td>string</td><td>Benzersiz kimlik (örn: 'sinner_wrathful_01'). Asla değiştirilmemelidir.</td><td>Veritabanı, ağ iletişimi ve kaydetme/yükleme işlemleri için benzersiz bir anahtar.</td></tr>
+                        <tr><td>cardName</td><td>string</td><td>Kartın oyuncuya gösterilecek adı.</td><td>Örn: "Öfkeli", "Lucifer", "Vaftiz".</td></tr>
+                        <tr><td>cardType</td><td>CardType (enum)</td><td>Kartın ana kategorisi: Günahkar, Şeytan, Katil, Ayin, İyiliksever.</td><td>Oyun mantığının kartları ayırt etmesi için temel sınıflandırma.</td></tr>
+                        <tr><td>sinType</td><td>SinType (enum)</td><td>Sadece 'Günahkar' kartları için günah türü. Örn: Öfke, Oburluk.</td><td>Günahkar setlerini oluşturmak için kullanılır. 'None' olarak ayarlanabilir.</td></tr>
+                        <tr><td>gender</td><td>GenderType (enum)</td><td>Sadece 'Günahkar' kartları için cinsiyet: Erkek, Kadın. Diğerleri için Cinsiyetsiz.</td><td>Bazı Ayin kartlarının (örn: Matrimony) mekanikleri için gereklidir.</td></tr>
+                        <tr><td>soulValue</td><td>int</td><td>Kartın temel ruh/puan değeri. Negatif olabilir.</td><td>Raund sonunda puanlama için kullanılır.</td></tr>
+                        <tr><td>cardArt</td><td>Sprite</td><td>Kartın ön yüzünde gösterilecek 2D görsel.</td><td>Arayüzde kartın görsel temsili.</td></tr>
+                        <tr><td>abilityDescription</td><td>string</td><td>Kartın yeteneğinin oyuncuya gösterilecek metni.</td><td>Oyuncunun kartın ne işe yaradığını anlaması için açıklama metni.</td></tr>
+                        <tr><td>cardAbilities</td><td>List&lt;AbilityEffect&gt;</td><td>Bu kartın sahip olduğu programatik özel yeteneklerin listesi.</td><td>Faz 2 ve sonrası için ölçeklenebilir yetenek sisteminin veri temeli.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.2. Destekleyici Veri Yapıları</h4>
+            <p><strong>DeckData.cs (ScriptableObject):</strong> Bu sınıf, bir <code>List&lt;CardData&gt;</code> içerir. Bu yapı, tasarımcıların farklı oyun modları veya oyuncu sayıları için "2 Kişilik Deste", "Tam Deste" gibi farklı deste konfigürasyonlarını proje içinde asset olarak oluşturmalarını sağlar. Oyun başladığında, DeckManager ilgili DeckData asset'ini kullanarak oyun destesini oluşturur.</p>
+            <p><strong>PlayerState.cs (Plain Old C# Object - POCO):</strong> Bu sınıf, bir MonoBehaviour veya ScriptableObject değildir; saf bir C# sınıfıdır. Oyun başladığında her oyuncu için bir örneği (instance) oluşturulur. Oyuncunun o anki durumunu temsil eden geçici verileri tutar: <code>List&lt;CardData&gt; hand</code> (eldeki kartlar), <code>List&lt;CardSet&gt; playedSets</code> (oynanmış setler), <code>int currentScore</code> (mevcut puan), seçilen DemonCard ve MurdererCard referansları vb. Bu yapı, statik kart tanımlarını (CardData) dinamik ve geçici oyuncu durumundan net bir şekilde ayırır, bu da veri yönetimini temiz ve anlaşılır kılar.</p>
+
+            <h4>2.3. Proje Varlık Organizasyonu</h4>
+            <p>Proje içerisinde oluşturulacak ~145 CardData asset'i ve diğer ScriptableObject'ları yönetmek için başından itibaren katı bir klasör hiyerarşisi uygulanmalıdır. Bu, özellikle ekip büyüdüğünde veya proje karmaşıklaştığında varlık kaosunu önlemek için kritik öneme sahiptir.</p>
+            <div class="code-block rounded-lg p-4 my-4">
+                <pre><code>
+Assets/
+└── Game/
+    ├── _Scenes/
+    ├── Art/
+    ├── Audio/
+    └── Scripts/
+    │   ├── Core/ (Managers, State Machine)
+    │   ├── Data/ (CardData, DeckData, PlayerState)
+    │   ├── UI/
+    │   └── Input/
+    └── ScriptableObjects/
+        ├── Cards/
+        │   ├── Sinners/
+        │   ├── Demons/
+        │   ├── Murderers/
+        │   ├── Sacraments/
+        │   └── GoodSamaritans/
+        ├── Decks/
+        └── Events/
+            ├── GameStateEvents/
+            └── GameplayEvents/
+                </code></pre>
             </div>
         </section>
 
-        <!-- 3. Çekirdek Sistemler -->
-        <section id="sistemler">
-            <div class="flex items-center gap-4 mb-8">
+        <!-- Diğer bölümler buraya eklenecek -->
+        <section id="sistemler" class="prose max-w-none">
+             <div class="flex items-center gap-4 mb-8">
                 <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
-                <h2 class="text-3xl font-bold text-white">3. Çekirdek Sistemler ve Yöneticiler</h2>
+                <h2 class="text-3xl font-bold text-white">3. Çekirdek Sistemler ve Yönetici Sınıfları</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="glass-effect rounded-xl p-6">
-                    <h4 class="font-semibold text-white mb-4 text-center">GameManager Durum Geçiş Diyagramı</h4>
-                    <img src="https://placehold.co/600x450/0a092d/e0e0e0?text=Durum+Makinesi+(State+Machine)" alt="Durum Makinesi Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
-                    <p class="text-xs text-center mt-2 text-indigo-300">Oyunun genel akışı (Ana Menü, Oyun Kurulumu, Oyuncu Turu, Puanlama, Oyun Sonu) bir Durum Makinesi ile yönetilecektir.</p>
-                </div>
-                <div class="space-y-4 text-indigo-100 leading-relaxed">
-                    <h3 class="gradient-text text-2xl">GameManager: Ana Durum Kontrolcüsü</h3>
-                    <p>`GameManager`, oyunun en üst düzeydeki akışını yöneten orkestra şefidir. Oyunun bir durumdan diğerine geçişini sağlamak için **Durum (State) tasarım desenini** kullanır. Bu, her bir oyun durumunun (örn: `GameSetupState`, `PlayerTurnState`) mantığını kendi sınıfı içinde kapsülleyerek sistemi temiz, anlaşılır ve kolayca genişletilebilir hale getirir.</p>
-                    <h3 class="gradient-text text-2xl mt-6">UIManager: Reaktif ve Bağımsız Arayüz</h3>
-                    <p>`UIManager` tamamen reaktif bir yapıda olacaktır. Oyun mantığını doğrudan çağırmak yerine, sadece `ScoreUpdated` veya `TurnStarted` gibi oyun olaylarına abone olur ve bu olaylar gerçekleştiğinde arayüzü günceller. Bu yaklaşım, UI'ı oyun mantığından tamamen ayırarak paralel geliştirmeye olanak tanır ve test edilebilirliği artırır.</p>
-                </div>
+            <h4>3.1. GameManager: Ana Durum Kontrolcüsü</h4>
+            <p>GameManager, oyunun en üst düzeydeki akışını yöneten orkestra şefidir. Sorumluluğu, oyunun bir durumdan diğerine geçişini sağlamaktır (örneğin, Ana Menü'den Oyun Kurulumu'na, oradan da Oyuncu Turu'na geçiş).
+            <strong>Tasarım Deseni (Design Pattern):</strong> GameManager'ın durumlarını yönetmek için <strong>Durum (State) tasarım deseni</strong> kullanılacaktır. Ancak bu, basit bir enum ve switch-case yapısıyla değil, sınıflar ve bir arayüz (IState) kullanılarak daha sofistike bir şekilde uygulanacaktır. switch-case yapısı, yeni durumlar eklendikçe hızla büyüyüp yönetilemez hale gelir ve Açık/Kapalı Prensibi'ni (Open/Closed Principle) ihlal eder. Sınıf tabanlı bir yaklaşım ise her bir durumun mantığını kendi sınıfı içinde (örn: GameSetupState, PlayerTurnState, RoundScoringState) kapsülleyerek sistemi temiz, anlaşılır ve kolayca genişletilebilir hale getirir.
+            <strong>Sorumluluklar:</strong> GameManager'ın tek sorumluluğu, oyunun genel durumunu yönetmektir. Oyun mantığını kendisi içermez; bu görevi o anki aktif durum nesnesine devreder. Örneğin, PlayerTurnState aktifken, turla ilgili detayları TurnManager yönetir.
+            <strong>Uygulama:</strong> GameManager, <code>private IState currentState;</code> alanına ve <code>public void TransitionToState(IState nextState)</code> metoduna sahip olacaktır. Bu metot, mevcut durumun Exit() metodunu, ardından yeni durumun Enter() metodunu çağırarak kontrollü bir geçiş sağlar. GameManager, diğer sistemlerin kolayca erişebilmesi için bir Singleton olarak tasarlanacaktır. Ancak bu, sahneye bağımlı olmayan, "tembel başlatmalı" (lazy initialization) bir Singleton olacaktır ki bu da modülerlik hedefimizle uyumludur.</p>
+
+            <div class="glass-effect rounded-xl p-6 my-8">
+                <img src="https://placehold.co/800x600/0a092d/e0e0e0?text=Durum+Makinesi+Şeması" alt="Durum Makinesi Şeması" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/800x600/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                <p class="caption"><strong>Diyagram 2:</strong> GameManager'ın Durum Makinesi (State Machine) akış şeması.</p>
             </div>
+            
+            <h4 class="mt-8">Tablo 3: GameManager Durum Tanımları (IState Uygulamaları)</h4>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Durum Adı (Sınıf)</th>
+                            <th>Giriş Mantığı (Enter())</th>
+                            <th>Çekirdek Mantık (Update())</th>
+                            <th>Çıkış Mantığı (Exit())</th>
+                            <th>Geçiş Yaptığı Durumlar (ve Koşulları)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>GameSetupState</td><td>GameSetupStarted olayını yayınlar. PlayerManager'ı oyuncu nesnelerini oluşturması için tetikler.</td><td>Diğer yöneticilerin kurulumu bitirmesini bekler (örneğin, DeckManager'dan gelen SetupComplete olayını dinler).</td><td>-</td><td>PlayerTurnState (Tüm sistemler hazır olduğunda).</td></tr>
+                        <tr><td>PlayerTurnState</td><td>TurnManager'a sıradaki oyuncuyla turu başlatmasını söyler. TurnStarted olayı yayınlanır.</td><td>Oyuncunun turunu bitirmesini bekler. RoundEnded olayını dinler.</td><td>-</td><td>PlayerTurnState (Sıradaki oyuncuyla devam eder) veya RoundScoringState (Raund bitiş koşulu sağlandığında).</td></tr>
+                        <tr><td>RoundScoringState</td><td>ScoringStarted olayını yayınlar. ScoreManager'ı puanları hesaplaması için tetikler.</td><td>Puanlama ve animasyonların bitmesini bekler.</td><td>Oyun tahtasını ve oyuncu alanlarını temizler (resetler).</td><td>GameSetupState (Toplam puan &lt; 100 ise) veya GameEndState (Toplam puan &gt;= 100 ise).</td></tr>
+                        <tr><td>GameEndState</td><td>Kazanan oyuncuyu belirler ve GameEnded olayını yayınlar. UI'da kazanan ekranını gösterir.</td><td>Oyuncunun menüye dönme girdisini bekler.</td><td>-</td><td>MainMenuState (Oyuncu menüye dönmeyi seçtiğinde).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.2. TurnManager: Oyun Akışı Kondüktörü</h4>
+            <p>TurnManager, GameManager'a bağlı ikincil bir yöneticidir. GameManager PlayerTurnState durumundayken aktif hale gelir. Bir oyuncunun turunun katı sırasını yönetmekle sorumludur: 1. Kart Çek, 2. Kart Oyna, 3. Kart At. Hangi oyuncunun sırası olduğunu, bir sonraki oyuncunun kim olacağını ve oyuncunun turun hangi aşamasında olduğunu takip eder. GameSetupStarted olayını dinleyerek oyuncu listesini alır ve TurnStarted ile TurnEnded gibi olayları yayınlayarak oyunun geri kalanını bilgilendirir.</p>
+
+            <h4>3.3. UIManager: Reaktif ve Bağımsız Arayüz</h4>
+            <p>UIManager tamamen reaktif bir yapıda olacaktır. Bu, hiçbir oyun mantığı sınıfının UIManager'ı doğrudan çağırmayacağı anlamına gelir (örneğin, <code>UIManager.UpdateScore(10)</code> gibi bir kod yazılamaz). Bu, mimarinin en temel kurallarından biridir. Bunun yerine, UIManager sadece oyun olaylarına abone olur.
+            <strong>Uygulama:</strong> UIManager, ScoreUpdated, TurnStarted, CardDrawn gibi ScriptableObject tabanlı olaylara referanslar tutar. OnEnable metodunda bu olaylara kendi metodlarını (örn: OnScoreUpdated(PlayerID player, int newScore)) dinleyici olarak kaydeder ve OnDisable metodunda bu kayıtları siler. Bir olay yayınlandığında, UIManager ilgili metodu çalıştırarak arayüzü günceller. Bu yaklaşım, UI'ı oyun mantığından tamamen ayırır, bu da UI ve oyun mantığı geliştirmelerinin paralel olarak yürütülmesine olanak tanır ve test edilebilirliği artırır. Bu yapı, Unity'nin UI için önerdiği Model-View-Presenter (MVP) veya Model-View-ViewModel (MVVM) gibi modern desenlerle uyumludur.</p>
         </section>
 
-        <!-- 4. Oyun Akışı -->
-        <section id="akis">
-            <div class="flex items-center gap-4 mb-8">
+        <!-- Diğer bölümler buraya eklenecek -->
+        <section id="akis" class="prose max-w-none">
+             <div class="flex items-center gap-4 mb-8">
                 <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
                 </div>
                 <h2 class="text-3xl font-bold text-white">4. Oyun Akışı ve Mantık Uygulaması</h2>
             </div>
-            <div class="space-y-8">
-                <div class="glass-effect rounded-xl p-6">
-                    <h4 class="font-semibold text-white mb-4 text-center">Bir Oyuncu Turunun Sıra Diyagramı</h4>
-                    <img src="https://placehold.co/1200x500/0a092d/e0e0e0?text=Set+Oynama+Akış+Diyagramı" alt="Sıra Diyagramı" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/1200x500/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
-                    <p class="text-xs text-center mt-2 text-indigo-300">Bir oyuncunun "Set Oynama" eylemi, `InputReader` tarafından algılanır, Olay Yolu üzerinden `GameplayLogic`'e iletilir, doğrulanır ve sonuç yine olaylar aracılığıyla `UIManager`'a bildirilerek oyuncuya gösterilir.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="code-block rounded-lg p-4 overflow-x-auto">
-                        <h4 class="font-semibold text-white mb-2">Set Doğrulama Algoritması</h4>
-                        <pre><code class="language-csharp text-sm text-indigo-200">
-// GameplayLogic.cs
-public bool IsValidSet(List<CardData> cards)
-{
-    if (cards.Count < 3) return false;
+            <h4>4.1. Bir Oyuncu Turunun Sıra Diyagramı</h4>
+            <p>Aşağıdaki UML Sıra Diyagramı, bir oyuncunun en temel eylemlerinden biri olan "Set Oynama" eyleminin, girdiden sonuca kadar olan tüm yaşam döngüsünü ve sistemler arası etkileşimi göstermektedir. Bu diyagram, olay tabanlı mimarinin pratikte nasıl çalıştığını net bir şekilde ortaya koyar.</p>
+            <div class="glass-effect rounded-xl p-6 my-8">
+                <img src="https://placehold.co/1200x600/0a092d/e0e0e0?text=Set+Oynama+Sıra+Diyagramı" alt="Sıra Diyagramı" class="rounded-lg w-full h-auto object-cover border-2 border-indigo-900" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/0a092d/e0e0e0?text=Görsel+Yüklenemedi';">
+                <p class="caption"><strong>Diyagram 3:</strong> "Set Oynama" eyleminin olay tabanlı mimari içindeki akışını gösteren sıra diyagramı.</p>
+            </div>
 
+            <h4>4.2. Çekirdek Kural Uygulama Mantığı (Faz 1)</h4>
+            <p>Bu bölümde, Faz 1 prototipinde uygulanması gereken temel oyun kurallarının C# kod yapıları detaylandırılmaktadır.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="code-block rounded-lg p-4 overflow-x-auto">
+                    <h4 class="font-semibold text-white mb-2">Set Doğrulama (IsValidSet) Algoritması</h4>
+                    <pre><code class="language-csharp text-sm">
+// GameplayLogic.cs içinde bir metot
+public bool IsValidSet(List<CardData> cardsToPlay, PlayerState currentPlayer)
+{
+    // Kural 1: Minimum set boyutu kontrolü.
+    // Not: Slothful yeteneği bu sayıyı 2'ye düşürebilir (Faz 2'de eklenecek).
+    if (cardsToPlay.Count < 3) return false;
+
+    // Kural 2: Setin tutarlılık kontrolü.
     SinType firstSinnerType = SinType.None;
-    // ...
+    int deceiverCount = 0;
+
     // Set içindeki ilk gerçek günahkar türünü bul.
-    // ...
-    // Tüm kartların bu türe uyduğunu veya
-    // Yalancı (Deceiver) olduğunu kontrol et.
-    // ...
+    foreach (var card in cardsToPlay)
+    {
+        if (card.cardType == CardType.Sinner && card.sinType != SinType.Deceiver)
+        {
+            firstSinnerType = card.sinType;
+            break;
+        }
+        if (card.sinType == SinType.Deceiver)
+        {
+            deceiverCount++;
+        }
+    }
+
+    // Eğer sette hiç normal günahkar yoksa (sadece Yalancılar varsa), geçersizdir.
+    if (firstSinnerType == SinType.None && deceiverCount == cardsToPlay.Count) return false;
+
+    // Tüm kartların ya Yalancı ya da bulunan ilk günahkar türüyle eşleştiğini kontrol et.
+    foreach (var card in cardsToPlay)
+    {
+        if (card.sinType != SinType.Deceiver && card.sinType != firstSinnerType)
+        {
+            return false; // Farklı türde bir günahkar var, set geçersiz.
+        }
+    }
+    
+    // Tüm kontrollerden geçtiyse set geçerlidir.
     return true;
 }
-                        </code></pre>
-                    </div>
-                    <div class="code-block rounded-lg p-4 overflow-x-auto">
-                        <h4 class="font-semibold text-white mb-2">Puanlama Algoritması</h4>
-                        <pre><code class="language-csharp text-sm text-indigo-200">
-// ScoreManager.cs
-public int CalculateRoundScore(PlayerState player)
-{
-    // Kural 1: Katil veya Lucifer kontrolü.
-    if (!player.CanScore()) return 0;
-
-    int totalScore = 0;
-    // Kural 2: Masadaki kartları topla.
-    // ...
-    // Kural 3: Eldeki kartları çıkar.
-    // ...
-    return totalScore;
-}
-                        </code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Oyuncu Girdisi -->
-        <section id="girdi">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
-                </div>
-                <h2 class="text-3xl font-bold text-white">5. Oyuncu Girdisi ve Etkileşim</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="space-y-4 text-indigo-100 leading-relaxed">
-                    <h3 class="gradient-text text-2xl">Input System ve Soyutlama Katmanı</h3>
-                    <p>Projede, Unity'nin modern **Input System** paketi kullanılacaktır. Bu sistem, girdileri donanımdan (fare, klavye, gamepad) soyutlayarak esnek bir kontrol şeması oluşturur. Oyun mantığı, doğrudan donanımı dinlemek yerine, `InputReader.cs` adında bir soyutlama katmanının yayınladığı anlamsal olayları (`OnClickEvent`, `OnDragEvent` vb.) dinler.</p>
-                    <p>Bu yaklaşım, oyun mantığını belirli bir donanıma sıkıca bağlamaktan kurtarır. Gelecekte projeye oyun kumandası veya dokunmatik ekran desteği eklemek, oyunun çekirdek kodunda hiçbir değişiklik yapmadan, sadece `InputReader` katmanında yapılacak küçük bir konfigürasyonla mümkün olacaktır.</p>
+                    </code></pre>
                 </div>
                 <div class="code-block rounded-lg p-4 overflow-x-auto">
-                    <h4 class="font-semibold text-white mb-2">InputReader.cs Örnek Yapı</h4>
-                    <pre><code class="language-csharp text-sm text-indigo-200">
-using UnityEngine;
-using UnityEngine.InputSystem;
-
-public class InputReader : MonoBehaviour, Controls.IPlayerActions
+                    <h4 class="font-semibold text-white mb-2">Raund Sonu Puanlama (CalculateRoundScore) Algoritması</h4>
+                    <pre><code class="language-csharp text-sm">
+// ScoreManager.cs içinde bir metot
+public int CalculateRoundScore(PlayerState player)
 {
-    // Inspector'dan atanacak ScriptableObject olayları
-    public GameEvent onClickEvent;
+    int totalScore = 0;
 
-    private Controls controls;
+    // Kural 1: Puan kazanmak için Katil veya Lucifer kontrolü.
+    bool canScore = player.HasMurdererInChurch() || player.HasDemon("Lucifer");
 
-    private void OnEnable()
+    if (!canScore)
     {
-        if (controls == null)
-        {
-            controls = new Controls();
-            controls.Player.SetCallbacks(this);
-        }
-        controls.Player.Enable();
+        // Not: Bu durumda oyuncu bir setini sonraki raunda taşır. Bu mantık GameManager'da yönetilir.
+        return 0;
     }
 
-    // Input System tarafından çağrılır
-    public void OnClick(InputAction.CallbackContext context)
+    // Kural 2: Kilisedeki (oynanmış) kartların puanlarını topla.
+    foreach (var playedSet in player.PlayedSets)
     {
-        if (context.phase == InputActionPhase.Performed)
+        foreach (var card in playedSet.Cards)
         {
-            // Tıklama olayını tüm dinleyicilere yayınla
-            onClickEvent.Raise();
+            // Not: Belial şeytanı Yalancıların negatif puanını sıfırlar (Faz 2'de eklenecek).
+            totalScore += card.soulValue;
         }
     }
+    // Oynanmış diğer kartları (Ayin, Katil vb.) da ekle.
+    foreach (var singleCard in player.PlayedSingleCards)
+    {
+        totalScore += singleCard.soulValue;
+    }
+
+    // Kural 3: Elde kalan kartların puanlarını çıkar.
+    foreach (var cardInHand in player.Hand)
+    {
+        // Not: İyiliksever kartları Yalancıların negatif puanını iptal eder (Faz 2'de eklenecek).
+        totalScore -= cardInHand.soulValue;
+    }
+
+    // Not: Diğer Şeytan ve Günahkar bonusları bu aşamada eklenecektir (Faz 2).
+    // Örn: Beelzebub bonusu, Envious bonusu vb.
+    return totalScore;
 }
                     </code></pre>
                 </div>
             </div>
         </section>
 
+        <!-- Diğer bölümler buraya eklenecek -->
+        <section id="girdi" class="prose max-w-none">
+             <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white">5. Oyuncu Girdisi ve Etkileşim</h2>
+            </div>
+            <h4>5.1. Input Actions Varlık Konfigürasyonu</h4>
+            <p>Projede Unity'nin yeni <strong>Input System</strong> paketi kullanılacaktır. Bu sistem, girdileri donanımdan soyutlayarak esnek bir kontrol şeması oluşturmayı sağlar. Proje içinde <code>HandayizControls.inputactions</code> adında bir asset oluşturulacak ve içinde tek bir "Player" Eylem Haritası (Action Map) tanımlanacaktır.</p>
+            <p><strong>Tanımlanacak Eylemler (Actions):</strong></p>
+            <ul class="list-disc pl-6 space-y-1">
+                <li><strong>Point (Değer: Vector2):</strong> İmlecin ekran üzerindeki pozisyonunu takip eder. Kartların üzerine gelme (hover) ve hedefleme için kullanılır. Fare pozisyonuna bağlanacaktır.</li>
+                <li><strong>Click (Tip: Button):</strong> Kart seçme, butonlara tıklama ve hedef konumu belirleme gibi tekil eylemler için kullanılır. Farenin sol tuşuna bağlanacaktır.</li>
+                <li><strong>Drag (Tip: Pass-through):</strong> Kartların sürükle-bırak işlevselliği için kullanılır. Farenin sol tuşunun basılı tutulma durumunu izler.</li>
+                <li><strong>Cancel (Tip: Button):</strong> Seçimi iptal etme veya bir eylemden geri çıkma için kullanılır. Farenin sağ tuşuna veya 'Escape' tuşuna bağlanabilir.</li>
+            </ul>
+
+            <h4>5.2. InputReader.cs Soyutlama Katmanı</h4>
+            <p>Oyun mantığı sınıflarının (GameplayLogic, UIManager vb.) doğrudan <code>Mouse.current.position</code> veya <code>Gamepad.current.leftStick</code> gibi donanıma özgü kodları çağırması, mimari açıdan kritik bir hatadır. Bu, mantığı belirli bir donanıma sıkıca bağlar ve gelecekte yeni kontrolcüler (oyun kumandası, dokunmatik ekran) eklemeyi neredeyse imkansız hale getirir.</p>
+            <p>Bu sorunun çözümü, bir soyutlama katmanı oluşturmaktır. <strong>InputReader.cs</strong> adında bir MonoBehaviour sınıfı, bu görevi üstlenir. Bu sınıf, Unity'nin PlayerInput bileşenini kullanarak ham donanım girdilerini dinler ve bunları oyunun anlayabileceği daha soyut, anlamsal olaylara dönüştürür.</p>
+            <p>Bu yaklaşımın mantık akışı şöyledir:</p>
+            <ol class="list-decimal pl-6 space-y-2">
+                <li>Bir oyun mantığı sınıfı, <code>if (Mouse.current.leftButton.wasPressedThisFrame)</code> gibi bir kod içerdiğinde, bu kod sadece fare ile çalışır.</li>
+                <li>Oyun kumandası desteği eklemek istendiğinde, aynı koda <code>|| Gamepad.current.buttonSouth.wasPressedThisFrame</code> eklenmesi gerekir. Bu, kodun karmaşıklaşmasına ve Açık/Kapalı Prensibi'nin ihlaline yol açar.</li>
+                <li>Doğru çözüm, InputReader'ın "Click" eylemini dinlemesidir. Bu eylem, fare sol tuşu veya oyun kumandası 'A' tuşu tarafından tetiklenebilir.</li>
+                <li>InputReader, "Click" eylemi gerçekleştiğinde, oyuncunun neden tıkladığını bilmez. Sadece bu girdiyi alır ve <code>OnClickEvent(Vector2 screenPosition)</code> gibi daha genel, oyunla ilgili bir olay yayınlar.</li>
+                <li>Oyunun diğer sistemleri (UIManager gibi), bu soyut olayı dinler ve tıklamanın bir kartın mı, bir butonun mu yoksa boş bir alanın mı üzerinde olduğunu kendileri yorumlar.</li>
+            </ol>
+            <p>Sonuç olarak, InputReader "donanım ne yapıyor?" sorusunu "oyuncunun niyeti ne?" sorusuna çevirir. Oyunun geri kalanı sadece niyetle ilgilenir, donanımla değil. Bu, sistemi son derece esnek ve yeni girdi yöntemleri için kolayca genişletilebilir kılar.</p>
+            <div class="code-block rounded-lg p-4 my-4 overflow-x-auto">
+                <h4 class="font-semibold text-white mb-2">InputReader.cs Örnek Uygulama</h4>
+                <pre><code class="language-csharp text-sm">
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+// Bu sınıf, PlayerInput bileşeni tarafından gönderilen mesajları alır
+// ve bunları ScriptableObject tabanlı olaylara çevirir.
+public class InputReader : MonoBehaviour, HandayizControls.IPlayerActions
+{
+    // Inspector'dan atanacak ScriptableObject olayları
+    [Header("Player Input Events")]
+    public GameEvent onPointEvent; // İmleç hareketi için
+    public GameEvent onClickEvent; // Tıklama eylemi için
+    public GameEvent onDragEvent;  // Sürükleme eylemi için
+
+    private HandayizControls controls;
+
+    private void OnEnable()
+    {
+        if (controls == null)
+        {
+            controls = new HandayizControls();
+            controls.Player.SetCallbacks(this);
+        }
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+
+    // IPlayerActions arayüzünden gelen metotlar
+    public void OnPoint(InputAction.CallbackContext context)
+    {
+        // Vector2 pozisyon verisini olayla birlikte yayınla
+        onPointEvent.Raise(context.ReadValue<Vector2>());
+    }
+
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            // Tıklama olayını yayınla
+            onClickEvent.Raise();
+        }
+    }
+
+    public void OnDrag(InputAction.CallbackContext context)
+    {
+        // Sürükleme verisini olayla birlikte yayınla
+        onDragEvent.Raise(context.ReadValue<float>());
+    }
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <!-- Sonuç -->
+        <section id="sonuc" class="prose max-w-none">
+            <h3 class="gradient-text text-2xl">Sonuç</h3>
+            <p>Bu teknik tasarım dokümanında detaylandırılan mimari, "Handayız" projesi için güçlü ve esnek bir temel oluşturmaktadır. Projenin en başından itibaren olay tabanlı ve veri odaklı bir tasarımı önceliklendirerek, Faz 1 prototipinin geçici bir iskele değil, çok katlı bir yapının ilk ve en sağlam katı olması sağlanmaktadır. Bu yaklaşım, gelecekteki geliştirme süreçlerini önemli ölçüde kolaylaştıracak, hata ayıklama süreçlerini basitleştirecek, tasarımcıları güçlendirecek ve projenin çok oyunculu işlevsellik ile zengin 3D etkileşimler gibi nihai vizyonuna ulaşması için net ve ölçeklenebilir bir yol sunacaktır. Bu dokümanın titizlikle takip edilmesi, projenin teknik başarısı için kritik bir öneme sahiptir.</p>
+        </section>
     </main>
 
     <footer class="border-t border-indigo-900/50 mt-24 py-8">
