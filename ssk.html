@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje "Handayız" - Sanat Stili Kılavuzu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #d1d5db;
+        }
+       .glass-nav {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+       .gradient-text {
+            background: linear-gradient(90deg, #a78bfa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+       .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+       .section-icon {
+            background: linear-gradient(145deg, #4f46e5, #a855f7);
+        }
+       .card-concept {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(31, 41, 55, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+       .card-concept:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #1f2937;
+        }
+        th, td {
+            border: 1px solid #374151;
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #374151;
+            font-weight: 600;
+            color: #f9fafb;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #1f2937;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #263142;
+        }
+       .font-cinzel { font-family: 'Cinzel', serif; }
+       .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="glass-nav sticky top-0 z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white">Handayız <span class="gradient-text">Sanat Kılavuzu</span></h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
+                <a href="#giris" class="hover:text-violet-400 transition-colors">Giriş</a>
+                <a href="#cyberpunk" class="hover:text-violet-400 transition-colors">Cyberpunk</a>
+                <a href="#wallstreet" class="hover:text-violet-400 transition-colors">Kurumsal Gerilim</a>
+                <a href="#gotik" class="hover:text-violet-400 transition-colors">Ortaçağ & Gotik</a>
+                <a href="#sonuc" class="hover:text-violet-400 transition-colors">Sonuç</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-20 md:py-28 text-center relative overflow-hidden bg-gray-900">
+        <div class="absolute inset-0 bg-grid-gray-700/10 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter text-white leading-tight">Karşılaştırmalı Sanat Stili Kılavuzu</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Projenin görsel kimliğini tanımlamak, riskleri ve fırsatları analiz etmek için hazırlanmış interaktif karar destek dokümanı.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 space-y-24">
+
+        <section id="giris">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl section-title text-white">Giriş: Projenin Görsel Kimliğini Tanımlamak</h2>
+                <p class="mt-2 text-gray-400 max-w-3xl mx-auto">Bu kılavuz, üç potansiyel tema (Cyberpunk, Kurumsal Gerilim ve Ortaçağ & Gotik) arasında, projenin hedefleri doğrultusunda bilinçli ve stratejik bir karar vermenize yardımcı olmayı hedefler.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="glass-effect rounded-xl p-6">
+                    <h3 class="font-bold text-lg text-white mb-2">Ton ve Atmosfer</h3>
+                    <p class="text-sm text-gray-400">Oyunun temel tonu karanlık, ciddi ve stratejik olacak. Seçilecek tema, bu olgun atmosferi desteklemeli ve derinleştirmelidir.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6">
+                    <h3 class="font-bold text-lg text-white mb-2">Okunabilirlik ve Anlaşılırlık</h3>
+                    <p class="text-sm text-gray-400">Rekabetçi ve çok oyunculu yapı, arayüzün ve kartların anında, hatasız anlaşılmasını zorunlu kılar. Estetik, asla işlevselliğin önüne geçmemelidir.</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6">
+                    <h3 class="font-bold text-lg text-white mb-2">3D Entegrasyonu</h3>
+                    <p class="text-sm text-gray-400">Her kartın 3D bir modelle canlanması, projenin ayırt edici özelliğidir. 2D arayüz, bu 3D oyun alanıyla uyum içinde çalışmalıdır.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cyberpunk" class="space-y-12">
+            <div class="flex items-center gap-4">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.037-.502.068-.75.097h.002l-2.25 2.25c-.383.383-.63.933-.63 1.518v5.714a2.25 2.25 0 002.25 2.25h1.5M12 14.25a.75.75 0 00.75.75h.008a.75.75 0 00.75-.75v-4.5a.75.75 0 00-.75-.75h-.008a.75.75 0 00-.75.75v4.5z" /></svg>
+                </div>
+                <h2 class="text-4xl section-title text-white">Bölüm 1: Cyberpunk: Neon-Noir Entrika</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Sanatsal Vizyon</h3>
+                    <p class="text-gray-300 leading-relaxed">Oyuncu, yağmurun yıkadığı neon ışıklı bir mega şehrin dijital damarlarında gezinen bir "veri hayaleti"dir. Bu evrende "ruhlar", ele geçirilen şifreli veri paketleri; "günahlar", yasa dışı sibernetik implantlar; "şeytanlar" ise kontrolden çıkmış yapay zekalardır. Estetik, "high-tech, low-life" felsefesini benimser: Göz alıcı teknoloji, toplumsal çürümenin üzerine atılmış parlak bir ciladır. [1, 2]</p>
+                    <p class="mt-4 text-sm font-bold text-violet-300">Anahtar Kelimeler: Distopik, Neon-Noir, Sibernetik, Glitch, Paranoya.</p>
+                </div>
+                <img src="https://placehold.co/600x400/111827/a78bfa?text=Cyberpunk+Atmosfer" alt="Cyberpunk Atmosfer" class="rounded-lg shadow-lg">
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Renk Paleti</h4>
+                    <p class="text-sm text-gray-400 mb-4">Karanlık zeminler üzerinde parlayan canlı, yapay neon renklerin yarattığı keskin kontrast. [3, 4]</p>
+                    <div class="flex space-x-2">
+                        <div class="w-8 h-8 rounded-full" style="background-color:#1B1B2A;" title="#1B1B2A"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#2C2C2E;" title="#2C2C2E"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#00BFFF;" title="#00BFFF"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#FF007A;" title="#FF007A"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#FFEA00;" title="#FFEA00"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#FF3D00;" title="#FF3D00"></div>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Tipografi</h4>
+                    <p class="text-sm text-gray-400 mb-4">Başlıklarda stilize, geometrik fontlar; gövde metinlerinde ise mutlak okunabilirlik için temiz sans-serif'ler. [5, 6]</p>
+                    <div>
+                        <p class="text-xl font-bold" style="font-family: 'Orbitron', sans-serif;">BAŞLIK (Oxta)</p>
+                        <p class="text-md">Alt Başlık (Source Sans 3)</p>
+                        <p class="text-sm">Paragraf metni (Roboto)</p>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Arayüz (UI/UX)</h4>
+                    <p class="text-sm text-gray-400 mb-4">Holografik, yarı saydam, "glassmorphism" paneller. Etkileşimlerde "glitch" ve parlama efektleri. [7, 8]</p>
+                    <img src="https://placehold.co/300x100/1f2937/d1d5db?text=Holografik+Butonlar" alt="Holografik UI" class="rounded-md">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://placehold.co/500x700/111827/a78bfa?text=Cyberpunk+Kart+Tasarımı" alt="Cyberpunk Kart Tasarımı" class="rounded-lg shadow-lg mx-auto">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Kart Tasarımı Konsepti</h3>
+                    <p class="text-gray-300 leading-relaxed">Kartlar, fiziksel kağıt nesneler değil, dijital veri parçaları olarak tasarlanmalıdır. Görünümleri, bir implant çipi, bir askeri sınıf erişim kartı veya havada asılı duran holografik bir projeksiyonu andırmalıdır. Çerçeve, ince neon hatlardan oluşur ve kartın köşelerinde devre kartı desenleri gibi detaylar bulunabilir. Görsel alanı, karakterin bozulmuş (glitch) veya termal kamera görüntüsü gibi bir temsilini gösterir. [9, 10]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wallstreet" class="space-y-12">
+            <div class="flex items-center gap-4">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0.414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0.621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V6.375c0-.621.504-1.125 1.125-1.125h.375m18 0h-4.5M3.75 18.75h4.5" /></svg>
+                </div>
+                <h2 class="text-4xl section-title text-white">Bölüm 2: Wall Street: Kurumsal Gerilim</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Sanatsal Vizyon</h3>
+                    <p class="text-gray-300 leading-relaxed">Oyuncu, cam ve çelikten oluşan gökdelenlerin gölgesinde acımasız bir güç oyunu oynayan bir CEO veya kurumsal casustur. "Ruhlar", ele geçirilen şirket hisseleri; "günahlar", piyasa manipülasyonlarıdır. Atmosfer, gergin, soğuk ve son derece hesaplıdır. Estetik, minimalist lüksü, kurumsal gücün ezici ağırlığını ve ihanetin keskin soğukluğunu yansıtır.</p>
+                    <p class="mt-4 text-sm font-bold text-violet-300">Anahtar Kelimeler: Minimalist, Kurumsal, Güç, Gerilim, Soğuk.</p>
+                </div>
+                <img src="https://placehold.co/600x400/111827/a78bfa?text=Kurumsal+Atmosfer" alt="Kurumsal Atmosfer" class="rounded-lg shadow-lg">
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Renk Paleti</h4>
+                    <p class="text-sm text-gray-400 mb-4">Monokromatik ve profesyonel. Nötr tonlar ve tek bir güçlü vurgu rengi. [11, 12]</p>
+                    <div class="flex space-x-2">
+                        <div class="w-8 h-8 rounded-full" style="background-color:#263238;" title="#263238"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#F0F4F8;" title="#F0F4F8"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#FFFFFF;" title="#FFFFFF"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#0F3460;" title="#0F3460"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#D50032;" title="#D50032"></div>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Tipografi</h4>
+                    <p class="text-sm text-gray-400 mb-4">Mutlak okunabilirlik ve netlik. Tek bir font ailesinin farklı ağırlıklarıyla hiyerarşi sağlanır. [13]</p>
+                    <div>
+                        <p class="text-xl font-bold font-montserrat">BAŞLIK (Montserrat Bold)</p>
+                        <p class="text-md font-montserrat">Alt Başlık (Montserrat Regular)</p>
+                        <p class="text-sm" style="font-family: 'Lato', sans-serif;">Paragraf metni (Lato)</p>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Arayüz (UI/UX)</h4>
+                    <p class="text-sm text-gray-400 mb-4">Finansal panellerden ilham alır. Grid tabanlı, bol beyaz alanlı, "flat" tasarım. [14, 15]</p>
+                    <img src="https://placehold.co/300x100/1f2937/d1d5db?text=Minimalist+Grafikler" alt="Minimalist UI" class="rounded-md">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://placehold.co/500x700/111827/a78bfa?text=Kurumsal+Kart+Tasarımı" alt="Kurumsal Kart Tasarımı" class="rounded-lg shadow-lg mx-auto">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Kart Tasarımı Konsepti</h3>
+                    <p class="text-gray-300 leading-relaxed">Kartlar, ultra lüks bir "black card" kredi kartı veya bir hisse senedi sertifikası gibi görünmelidir. Tasarım; zenginlik, ayrıcalık ve güç hissini yansıtmalıdır. Neredeyse çerçevesiz, "edge-to-edge" bir tasarım, mat yüzeyler ve ince metalik detaylar ön plandadır. [16, 17]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gotik" class="space-y-12">
+            <div class="flex items-center gap-4">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                </div>
+                <h2 class="text-4xl section-title text-white">Bölüm 3: Ortaçağ & Gotik: Karanlık Fantezi</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Sanatsal Vizyon</h3>
+                    <p class="text-gray-300 leading-relaxed">Oyuncu, çökmekte olan bir imparatorluğun loş katedrallerinde, kadim iblislerle pazarlık yapan ahlakı bozuk bir din adamıdır. Bu dünya, *Sinners* oyununun ruhunu en saf haliyle taşır. Estetik; yontulmuş taşın soğukluğunu, solmuş parşömenin kırılganlığını ve paslanmış demirin acı tadını yansıtmalıdır. [18, 19]</p>
+                    <p class="mt-4 text-sm font-bold text-violet-300">Anahtar Kelimeler: Gotik, Kasvetli, Skeuomorphic, Mistik, Çürüme.</p>
+                </div>
+                <img src="https://placehold.co/600x400/111827/a78bfa?text=Gotik+Atmosfer" alt="Gotik Atmosfer" class="rounded-lg shadow-lg">
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Renk Paleti</h4>
+                    <p class="text-sm text-gray-400 mb-4">Karanlık, desatüre edilmiş ana tonlar ve zengin vurgu renkleri. [20, 21]</p>
+                    <div class="flex space-x-2">
+                        <div class="w-8 h-8 rounded-full" style="background-color:#2E2A2B;" title="#2E2A2B"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#D1C6C6;" title="#D1C6C6"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#7A2A2A;" title="#7A2A2A"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#4B3D5B;" title="#4B3D5B"></div>
+                        <div class="w-8 h-8 rounded-full" style="background-color:#B18F3A;" title="#B18F3A"></div>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Tipografi</h4>
+                    <p class="text-sm text-gray-400 mb-4">Başlıklarda okunabilir Blackletter, gövde metinlerinde ise klasik, zamana meydan okuyan serif fontlar. [22, 23]</p>
+                    <div>
+                        <p class="text-xl font-bold font-cinzel">BAŞLIK (Uncial Antiqua)</p>
+                        <p class="text-md font-cinzel">Alt Başlık (Cinzel)</p>
+                        <p class="text-sm" style="font-family: 'Merriweather', serif;">Paragraf metni (Merriweather)</p>
+                    </div>
+                </div>
+                <div class="card-concept rounded-xl p-6">
+                    <h4 class="font-bold text-lg text-white mb-3">Arayüz (UI/UX)</h4>
+                    <p class="text-sm text-gray-400 mb-4">Skeuomorphism: Arayüz, taş, ahşap, metal gibi gerçek dünya nesnelerini taklit eder. [24, 25]</p>
+                    <img src="https://placehold.co/300x100/1f2937/d1d5db?text=Taş+Butonlar" alt="Skeuomorphic UI" class="rounded-md">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://placehold.co/500x700/111827/a78bfa?text=Gotik+Kart+Tasarımı" alt="Gotik Kart Tasarımı" class="rounded-lg shadow-lg mx-auto">
+                <div>
+                    <h3 class="gradient-text text-2xl mb-2">Kart Tasarımı Konsepti</h3>
+                    <p class="text-gray-300 leading-relaxed">Kartlar, bir mezar taşı, bir katedralin vitray penceresi veya tezhipli bir el yazması sayfası gibi görünmelidir. Her kart, kendi başına elle yapılmış bir sanat eseri hissi vermelidir. Çerçeve, yontulmuş taş veya süslü, paslanmış metalden yapılmış, gotik mimari unsurları içeren ağır ve detaylı bir yapıdadır.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sonuc">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="section-icon w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h2 class="text-4xl section-title text-white">Sonuç ve Karşılaştırmalı Değerlendirme</h2>
+            </div>
+            <p class="text-gray-300 leading-relaxed max-w-4xl mb-8">Bu analiz, ekibin sadece estetik olarak en çekici temayı değil, projenin uzun vadeli başarısı için "en doğru" temayı seçmesine yardımcı olmayı amaçlamaktadır. Nihai karar, projenin "Risk ve Ödül" dengesi üzerine kurulmalıdır.</p>
+            
+            <div class="overflow-x-auto">
+                <h3 class="text-2xl font-bold text-white mb-4">Tematik Karşılaştırma Matrisi</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kriter</th>
+                            <th>Cyberpunk</th>
+                            <th>Kurumsal Gerilim</th>
+                            <th>Ortaçağ & Gotik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mekaniklerle Tematik Uyum</td><td>Yüksek</td><td>Orta</td><td>Çok Yüksek</td></tr>
+                        <tr><td>Görsel Okunabilirlik</td><td>Orta-Zor</td><td>Çok Yüksek</td><td>Orta</td></tr>
+                        <tr><td>Pazardaki Özgünlük</td><td>Yüksek</td><td>Çok Yüksek</td><td>Düşük-Orta</td></tr>
+                        <tr><td>Uygulama Kompleksitesi (UI)</td><td>Yüksek</td><td>Düşük</td><td>Orta</td></tr>
+                        <tr><td>Uygulama Kompleksitesi (3D)</td><td>Yüksek</td><td>Düşük</td><td>Orta-Yüksek</td></tr>
+                        <tr><td>Genişletilebilirlik</td><td>Çok Yüksek</td><td>Yüksek</td><td>Yüksek</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-white mb-4">Stratejik Tavsiye</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg border border-green-500/50">
+                        <h4 class="font-bold text-lg text-green-400">Güvenli ve Hızlı Prototip Yolu</h4>
+                        <p class="mt-2 text-sm text-gray-300"><strong class="text-white">Kurumsal Gerilim.</strong> Bu tema, ekibin temel oyun mekaniklerini hızla hayata geçirmesine ve okunabilir bir prototip oluşturmasına olanak tanır. Özgünlüğü, pazarlamada bir avantaj olabilir.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg border border-blue-500/50">
+                        <h4 class="font-bold text-lg text-blue-400">Dengeli ve Tematik Olarak Güçlü Yol</h4>
+                        <p class="mt-2 text-sm text-gray-300"><strong class="text-white">Ortaçağ & Gotik.</strong> Bu tema, projenin orijinal vizyonuna en sadık kalan yoldur ve kanıtlanmış bir estetik sunar. Pazardaki rekabet, daha güçlü bir hikaye anlatımı ile aşılabilir.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg border border-red-500/50">
+                        <h4 class="font-bold text-lg text-red-400">Yüksek Risk / Yüksek Ödül Yolu</h4>
+                        <p class="mt-2 text-sm text-gray-300"><strong class="text-white">Cyberpunk.</strong> Eğer ekip, teknik zorlukların üstesinden gelebileceğine inanıyorsa, bu tema projeyi görsel olarak unutulmaz kılabilir ve büyük bir oyuncu kitlesinin ilgisini çekebilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-800 mt-24 py-8">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            <p>&copy; 2025 - Proje "Handayız" Sanat Stili Kılavuzu v1.0</p>
+        </div>
+    </footer>
+
+</body>
+</html>
